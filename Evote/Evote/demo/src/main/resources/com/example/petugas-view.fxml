@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@Values/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PetugasController">
+   <children>
+      <VBox alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0">
+         <children>
+            <HBox fx:id="header" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="1000.0" spacing="10.0" styleClass="header">
+               <children>
+                  <ImageView fitHeight="52.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Values/gambar/E.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="80.0" top="15.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="1000.0" spacing="10.0">
+               <children>
+                  <VBox fx:id="sidebar" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="200.0" spacing="10.0" styleClass="sidebar">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Values/gambar/Pfp.jpg" />
+                           </image>
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label fx:id="username" alignment="CENTER" prefHeight="18.0" prefWidth="102.0" text="Orion" textAlignment="CENTER">
+                           <font>
+                              <Font name="Arial Black" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lokasiUser" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="241.0" text="KPU Dapil Yogyakarta-1">
+                           <font>
+                              <Font name="Arial" size="12.0" />
+                           </font>
+                        </Label>
+                        <Button onAction="#pemilihButton" prefHeight="30.0" prefWidth="118.0" styleClass="Dashboard-Button" text="Data Pemilih" textFill="#c5c5c5" />
+                        <Button prefHeight="30.0" prefWidth="119.0" style="-fx-background-color: #235884;" styleClass="Dashboard-Button" text="Data Petugas" textFill="WHITE" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="542.0" prefWidth="800.0" spacing="10.0">
+                     <children>
+                        <HBox spacing="10.0">
+                           <children>
+                              <TextField fx:id="kolomSearch" prefHeight="25.0" prefWidth="260.0" promptText="Search" />
+                              <Button onAction="#searchData" style="-fx-background-color: #F7AB00;" text="Cari" textFill="WHITE">
+                                 <font>
+                                    <Font name="Arial" size="12.0" />
+                                 </font></Button>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </HBox>
+                        <TableView fx:id="Table" prefHeight="285.0" prefWidth="790.0">
+                           <columns>
+                              <TableColumn fx:id="kolomNAMA" prefWidth="168.0000057220459" text="Nama Lengkap" />
+                              <TableColumn fx:id="kolomID" prefWidth="182.4000244140625" text="Nomor Identitas" />
+                              <TableColumn fx:id="kolomALAMAT" prefWidth="140.0" text="Alamat" />
+                              <TableColumn fx:id="kolomEMAIL" prefWidth="157.60000610351562" text="Email" />
+                              <TableColumn fx:id="kolomJENISKELAMIN" prefWidth="138.4000244140625" text="Jenis Kelamin" />
+                           </columns>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="115.0" prefWidth="790.0" spacing="10.0">
+                           <children>
+                              <VBox prefHeight="71.0" prefWidth="164.0" spacing="10.0">
+                                 <children>
+                                    <Label text="Nama Lengkap" textFill="#676767">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="kolomNAMAInput" prefWidth="200.0" />
+                                    <Label text="Nomor Identitas" textFill="#575757">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="kolomIDInput" prefWidth="200.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="116.0" prefWidth="164.0" spacing="10.0">
+                                 <children>
+                                    <Label text="Alamat" textFill="#575757">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="kolomALAMATInput" prefWidth="200.0">
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </TextField>
+                                    <Label text="Email" textFill="#525252">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="kolomEMAILInput" prefWidth="200.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox prefHeight="129.0" prefWidth="168.0" spacing="10.0">
+                                 <children>
+                                    <Label text="Jenis Kelamin" textFill="#575757">
+                                       <font>
+                                          <Font name="Arial" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="kolomJENISKELAMINInput" prefWidth="200.0">
+                                       <padding>
+                                          <Insets top="10.0" />
+                                       </padding>
+                                    </TextField>
+                                    <HBox alignment="BOTTOM_CENTER" prefHeight="48.0" prefWidth="168.0" spacing="10.0">
+                                       <children>
+                                          <Button onAction="#tambahData" style="-fx-background-color: #59D739;" text="Tambah" textFill="WHITE" />
+                                          <Button onAction="#deleteData" style="-fx-background-color: #D74339;" text="Hapus" textFill="WHITE" />
+                                          <Button onAction="#editData" style="-fx-background-color: #F7AB00;" text="Edit" textFill="WHITE" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets top="10.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="10.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
